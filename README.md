@@ -47,11 +47,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Folder Structure
 ```bash
-|-- meteor
+|-- project-name
     |-- .eslintrc.json
     |-- .gitignore
     |-- README.md
-    |-- directoryList.md
     |-- next-env.d.ts
     |-- next.config.js
     |-- package-lock.json
@@ -74,56 +73,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
         |   |   |   |-- page.tsx
         |   |   |-- welcome
         |   |       |-- page.tsx
-        |   |-- dahsboard
-        |   |   |-- checkout
-        |   |   |   |-- cart
-        |   |   |   |   |-- page.tsx
-        |   |   |   |-- checkout-billing-how-to
-        |   |   |   |   |-- page.tsx
-        |   |   |   |-- checkout-choose-billing-method
-        |   |   |   |   |-- page.tsx
-        |   |   |   |-- checkout-confirmation
-        |   |   |   |   |-- page.tsx
-        |   |   |   |-- checkout-data-form
-        |   |   |   |   |-- page.tsx
-        |   |   |   |-- checkout-location
-        |   |   |       |-- page.tsx
-        |   |   |-- home
-        |   |   |   |-- page.tsx
-        |   |   |   |-- menu
-        |   |   |       |-- page.tsx
-        |   |   |-- orders
-        |   |   |   |-- page.tsx
-        |   |   |   |-- [id]
-        |   |   |       |-- page.tsx
-        |   |   |       |-- billing-how-to
-        |   |   |       |   |-- page.tsx
-        |   |   |       |-- tracking
-        |   |   |           |-- page.tsx
-        |   |   |-- products
-        |   |   |   |-- page.tsx
-        |   |   |   |-- [id]
-        |   |   |       |-- page.tsx
-        |   |   |-- services
-        |   |   |   |-- contacts
-        |   |   |   |   |-- page.tsx
-        |   |   |   |-- retur
-        |   |   |       |-- [id]
-        |   |   |       |   |-- page.tsx
-        |   |   |       |-- retur-data-form
-        |   |   |       |   |-- page.tsx
-        |   |   |       |   |-- components
-        |   |   |       |       |-- modal-success-retur.tsx
-        |   |   |       |-- retur-history
-        |   |   |       |   |-- page.tsx
-        |   |   |       |-- term-n-condition
-        |   |   |           |-- page.tsx
-        |   |   |-- stores
-        |   |       |-- page.tsx
-        |   |       |-- [id]
-        |   |           |-- page.tsx
-        |   |           |-- chat
-        |   |               |-- page.tsx
         |   |-- dashboard
         |       |-- checkout
         |       |   |-- checkout-data-form
