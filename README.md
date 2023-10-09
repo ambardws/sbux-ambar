@@ -5,13 +5,19 @@ a meteor nextjs boilerplate app, this code was builded using this versions :
 - node v18.13.0
 - npm 8.19.3
 
-stacks
+## Stack Resources
 
 - react 18.2.0
+  - [React.js Documentation](https://react.dev/learn/thinking-in-react) - learn about React.js features and API.
 - next 13.4.19
+  - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+  - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - zustand 4.4.1
-- tailwindcss 3.3.3
+  - [Zustand Documentation](https://zustand-demo.pmnd.rs/) - learn about zustand, elegant state management tool
+- tailwindcss 3.3.3 
+  - [Tailwind CSS](https://tailwindcss.com/) - a utility-first CSS framework for rapidly building modern websites
 - daisyui 3.7.4
+  - [Daisy UI](https://daisyui.com/) - a component plugin for Tailwind CSS
 ## Getting Started
 
 First, run the development server:
@@ -30,63 +36,37 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Folder Structure
 ```bash
 |-- project-name
-    |-- .eslintrc.json
-    |-- .gitignore
-    |-- README.md
-    |-- next-env.d.ts
-    |-- next.config.js
-    |-- package-lock.json
-    |-- package.json
-    |-- postcss.config.js
-    |-- tailwind.config.ts
-    |-- tsconfig.json
-    |-- public
+    |-- public                              // Public static resource of project
     |   |-- next.svg
     |   |-- vercel.svg
     |   |-- assets
-    |-- src
+    |-- src                                 // Project directory: your working area 🤘
         |-- app
         |   |-- favicon.ico
-        |   |-- globals.css
-        |   |-- layout.tsx
-        |   |-- page.tsx
-        |   |-- auth
-        |   |   |-- term-n-service
-        |   |   |   |-- page.tsx
-        |   |   |-- welcome
+        |   |-- globals.css                 // global css override
+        |   |-- layout.tsx                  // root layout
+        |   |-- page.tsx                    // root page -> /
+        |   |-- auth                        // auth page group -> /auth/ -> usually for authetication page groups like signin, signup and reset password
+        |   |   |-- signin                  // signin page -> /auth/signin
         |   |       |-- page.tsx
-        |   |-- dashboard
-        |       |-- checkout
+        |   |-- dashboard                   // dashboard page group -> /dashboard/ -> usually for main app or protected (logged user screen) route application
+        |       |-- checkout                // signin page -> /dashboard/signin
         |       |   |-- checkout-data-form
         |       |       |-- components
-        |       |-- home
+        |       |-- home                    // home page -> /dashboard/home
         |           |-- components
-        |-- assets
+        |-- assets                          // assets dir for application
         |   |-- index.ts
         |   |-- icons
         |   |   |-- cart.svg
         |   |   |-- menu-hamburger.svg
         |   |-- images
         |       |-- logo.png
-        |-- components
+        |-- components                      // global reusable component
         |   |-- ThemePreview.tsx
         |   |-- index.ts
         |   |-- footer
@@ -107,22 +87,31 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
         |       |-- ModalSelectSearch.tsx
         |       |-- ModalUploadFile.tsx
         |       |-- index.ts
-        |-- constants
+        |-- constants                        // constants for application
         |   |-- env.ts
-        |-- hooks
+        |-- hooks                            // reusable hooks function
         |   |-- useHydrated.ts
-        |-- services
+        |-- services                         // remote service to API or firebase or other clients
         |   |-- api.ts
         |   |-- client.ts
-        |-- stores
-        |   |-- auth
-        |       |-- actions.ts
-        |       |-- index.ts
-        |-- types
+        |-- stores                           // zustand directory to manage global state and action
+        |   |-- auth                         // zustand for auth
+        |       |-- actions.ts               // zustand action, usually has action from calling api from clients/api.ts 
+        |       |-- index.ts                 // zustand state, your state of the app
+        |-- types                            // modelin ts types
         |   |-- user.d.ts
-        |-- utils
+        |-- utils                            // reusable primitive function
             |-- helpers.ts
             |-- logger.ts
             |-- storage.ts
             |-- toast.tsx
+    |-- .eslintrc.json
+    |-- .gitignore
+    |-- README.md
+    |-- next.config.js
+    |-- package-lock.json
+    |-- package.json
+    |-- postcss.config.js
+    |-- tailwind.config.ts                   // theming and tailwind setup
+    |-- tsconfig.json
 ```
