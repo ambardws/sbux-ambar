@@ -3,7 +3,7 @@ export default function ThemePreview() {
     return (
       <div>
         <div
-          className="text-base-content not-prose grid gap-3 border p-6"
+          className="text-base-content not-prose grid gap-3  p-6"
           data-theme="trex"
         >
           <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
