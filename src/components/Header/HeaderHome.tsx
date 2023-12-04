@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HeaderHome() {
   return (
-    <header className="flex h-[70px] bg-white drop-shadow-md items-center sticky w-full top-0 z-10">
+    <header className="flex h-[70px] bg-white shadow-[0_5px_3px_-3px_#7090B026] items-center sticky w-full top-0 z-10">
       <div className="flex flex-1 justify-between px-5">
         <Image
           src={assets.StarbuckIcons.StarbuckLogo}

@@ -1,22 +1,21 @@
+"use client";
 import assets from "@trex/assets";
 import Image from "next/image";
 import React from "react";
 
 export default function Sidebar() {
   return (
-    <div className="min-h-screen bg-white w-[50%]">
-      <h1 className="text-lg font-bold text-[#3C405F] text-center p-5">
-        Menus
-      </h1>
-      <div className="space-y-3 px-2">
+    <div className=" bg-white w-[30%] py-5">
+      <h1 className="text-lg font-bold text-[#3C405F] text-center">Menus</h1>
+      <div className="space-y-3 px-2 mt-1">
         <div>
           <h1 className="text-[#3C405F] text-sm font-semibold">
             Beverages (50)
           </h1>
           <div className="space-y-2 mt-1">
-            <div className="flex space-x-4 p-2 border border-[#F2F3FF] drop-shadow-sm rounded-xl bg-[#F2F3FB] cursor-pointer h-[50px]">
+            <div className="flex space-x-4 p-2 border border-[#F2F3FF] drop-shadow-sm rounded-xl bg-info cursor-pointer h-[50px]">
               <div className="bg-success w-2 m-[-8px] rounded-tl-xl rounded-bl-xl"></div>
-              <div className="bg-[#FBF8F3] rounded-full m-auto p-0.5 h-[90%]">
+              <div className="bg- rounded-full m-auto p-0.5 h-[90%]">
                 <Image
                   src={assets.StarbuckBeverages.BrewedCoffees}
                   alt="espresso"
@@ -202,10 +201,8 @@ export default function Sidebar() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="px-2">
-        <div className="space-y-2 mt-1 absolute bottom-0 py-3 px-2">
+        <div className="space-y-2 py-3  pt-20">
           <div className="flex space-x-2 p-2 border border-[#F2F3FF] drop-shadow-sm rounded-xl cursor-pointer h-[50px]">
             <div className="rounded-full m-auto p-0.5 h-[90%]">
               <Image
@@ -215,7 +212,12 @@ export default function Sidebar() {
               />
             </div>
 
-            <p className="text-xs text-[#3C405F] my-auto font-medium w-[70%] pr-2">
+            <p
+              className="text-xs text-[#3C405F] my-auto font-medium w-[70%] pr-2"
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+            >
               Go to top
             </p>
           </div>
@@ -233,16 +235,14 @@ export default function Sidebar() {
             </p>
           </div>
 
-          
-            <button className="btn text-white bg-[#242424] rounded-[30px] p-2 capitalize w-full text-xs sm:text-base font-semibold mt-1">
+          <button className="btn text-white bg-[#242424] rounded-[30px] p-2 capitalize w-full text-xs sm:text-base font-semibold mt-1">
             <Image
-                src={assets.StarbuckIcons.Search}
-                alt="espresso"
-                className="w-6 h-6"
-              />
-              Search
-            </button>
-          
+              src={assets.StarbuckIcons.Search}
+              alt="espresso"
+              className="w-6 h-6"
+            />
+            Search
+          </button>
         </div>
       </div>
     </div>

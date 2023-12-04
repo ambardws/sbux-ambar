@@ -17,6 +17,18 @@ import ArrowLeft from "./icons/Arrow-Left.svg";
 import ArrowRight from "./icons/Arrow-Right.svg";
 import Cart2 from "./icons/Cart-2.svg";
 
+// Section Promotion
+import Banner1 from "./images/Banners/banner1.png";
+import Banner2 from "./images/Banners/banner2.png";
+import Banner3 from "./images/Banners/banner3.png";
+
+// Section Most Order
+import Macchiato from "./images/MostOrders/machiato.png";
+import GreenTea from "./images/MostOrders/green-tea.png";
+import Cakes from "./images/MostOrders/cakes.png";
+import ShoppingCart from "./icons/shopping-cart.svg";
+
+import New from "./icons/new.svg";
 
 const assets = {
   StarbuckImages: {
@@ -31,7 +43,8 @@ const assets = {
     Search,
     ArrowLeft,
     ArrowRight,
-    Cart2
+    Cart2,
+    New
   },
   StarbuckBeverages: {
     BrewedCoffees,
@@ -40,5 +53,16 @@ const assets = {
   StarbuckFoods: {
     Sandwich
   },
+  StarbuckBanners: {
+    Banner1,
+    Banner2,
+    Banner3
+  },
+  StarbuckMostOrders: {
+    Macchiato,
+    GreenTea,
+    Cakes,
+    ShoppingCart
+  }
 };
 export default assets;
