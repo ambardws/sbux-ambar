@@ -8,3 +8,6 @@ export const API_GET_PROFILE = "/api/auth/me";
 export const API_GET_CURRICULUMS = "/api/curriculum";
 export const API_GET_SUB_CURRICULUMS = "/api/curriculum/sub-learning-material";
 export const API_GENERATE_CURRICULUM = "/api/curriculum/generate-curriculum";
+
+//product
+export const API_GET_PRODUCT = "/api/products";

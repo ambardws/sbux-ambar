@@ -5,9 +5,17 @@ import React from "react";
 export default function Promotion() {
   return (
     <div className="space-y-3">
-      <h1 className="text-[#3C405F] font-medium text-base">
-        Package & Promotion
-      </h1>
+      <div className="flex justify-between">
+        <h1 className="text-[#3C405F] font-medium text-base">
+          Package & Promotion
+        </h1>
+        <div className="flex space-x-2 my-auto">
+          <div className="w-2 h-2 rounded-full bg-black"></div>
+          <div className="w-2 h-2 rounded-full bg-[#C4C4C4]"></div>
+          <div className="w-2 h-2 rounded-full bg-[#C4C4C4]"></div>
+        </div>
+      </div>
+
       <div className="flex space-x-3 overflow-x-auto no-scrollbar -mr-5 pb-2">
         <Image
           src={assets.StarbuckBanners.Banner1}

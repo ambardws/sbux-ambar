@@ -16,6 +16,14 @@
   }
 }
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -26,14 +34,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.no-scrollbar { 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} 
+
 .no-scrollbar::-webkit-scrollbar { 
   display: none; 
 } 
-
-.triangle-element {
-  rotate: 135deg;
-  background: conic-gradient(at 50% 50%,transparent 135deg,#8DBC3F 0,#8DBC3F 225deg, transparent 0);
-}
 
 .stack-top {
   /* adjust the below to control the shape */
@@ -63,3 +71,4 @@ body {
   transform: translate(-29.29%, -100%) rotate(-45deg);
   transform-origin: bottom right;
 }
+

@@ -1,34 +1,28 @@
 "use client";
 
 import assets from "@trex/assets";
+import ModalCart from "@trex/components/Modal/ModalCart";
+import { useProductStore } from "@trex/stores/products";
 import { numberFormat } from "@trex/utils/format";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import ModalCart from "../Modal/ModalCart";
 
 type OrdersCard = {
   index: number;
   order: Products;
 };
 
-export default function MostOrders() {
-  const [orders, setOrders] = useState<Products[]>([]);
+export const Card = (props: any) => {
+  const [dataByCategory, setDataByCategory] = useState<Products[]>([]);
+  const { products, loading } = useProductStore();
 
-  const getMostOrders = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/api/most-orders");
-      const res = await response.json();
-      setOrders(res.data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
+  const getByCategory = (category: string) => {
+    const filterData =
+      products[0]?.filter((item: Products) => item.category === category) || [];
+    setDataByCategory(filterData);
   };
 
-  useEffect(() => {
-    getMostOrders();
-  }, []);
-
-  const CardMostOrder = (props: OrdersCard) => {
+  const CustomCard = (props: OrdersCard) => {
     const [modalData, setModalData] = useState<Products>();
     const [showModal, setShowModal] = useState<boolean>(false);
     const handleCart = (data: Products) => {
@@ -41,8 +35,8 @@ export default function MostOrders() {
     };
     return (
       <div
-        className={`card bg-base-100 shadow-md p-4 min-w-[170px] relative inline-block mt-[10px] ml-[10px] ${
-          orders.length - 1 === props.index ? "!mr-5" : ""
+        className={`card bg-base-100 shadow-md p-4 w-[170px] relative inline-block mt-[10px] ml-[10px] ${
+          products[0].length - 1 === props.index ? "!mr-5" : ""
         }`}
       >
         {props.order.discount !== 0 && (
@@ -85,7 +79,10 @@ export default function MostOrders() {
               </p>
               <p className="mt-2 text-xs font-bold">
                 {numberFormat({
-                  num: Number(props.order.price - props.order.price * 0.1),
+                  num: Number(
+                    props.order.price -
+                      props.order.price * (props.order.discount / 100)
+                  ),
                   opt: { style: "currency" },
                 })}
               </p>
@@ -120,22 +117,22 @@ export default function MostOrders() {
     );
   };
 
+  useEffect(() => {
+    getByCategory(props.name);
+  }, [products]);
   return (
-    <div className="space-y-2">
+    <div className="space-y-2" id={props.name}>
       <div className="flex justify-between">
-        <h1 className="text-[#3C405F] font-medium text-base">Most Orders</h1>
-        <div className="flex space-x-2 my-auto">
-          <div className="w-2 h-2 rounded-full bg-black"></div>
-          <div className="w-2 h-2 rounded-full bg-[#C4C4C4]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#C4C4C4]"></div>
-        </div>
+        <h1 className="text-[#3C405F] font-medium text-base min-w-max">
+          {props.name}
+        </h1>
+        <hr className="bg-[#CBD4E2] h-[2px] w-full my-auto mx-2" />
       </div>
-
-      <div className="flex space-x-3 overflow-x-auto no-scrollbar -mr-5 pb-1 h-[270px] -ml-2 \">
-        {orders?.map((order, index) => (
-          <CardMostOrder order={order} index={index} key={index} />
+      <div className=" flex-wrap space-x-3 -mr-5 pb-1 -ml-2 \">
+        {dataByCategory?.map((order, index) => (
+          <CustomCard order={order} index={index} key={index} />
         ))}
       </div>
     </div>
   );
-}
+};

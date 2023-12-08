@@ -28,6 +28,9 @@ import GreenTea from "./images/MostOrders/green-tea.png";
 import Cakes from "./images/MostOrders/cakes.png";
 import ShoppingCart from "./icons/shopping-cart.svg";
 
+// Section Cart
+import SaveOrder from "./icons/Cart/Save-order.svg";
+
 import New from "./icons/new.svg";
 
 const assets = {
@@ -44,7 +47,8 @@ const assets = {
     ArrowLeft,
     ArrowRight,
     Cart2,
-    New
+    New,
+    SaveOrder
   },
   StarbuckBeverages: {
     BrewedCoffees,
@@ -63,6 +67,9 @@ const assets = {
     GreenTea,
     Cakes,
     ShoppingCart
+  },
+  StarbuckCart: {
+    SaveOrder
   }
 };
 export default assets;
