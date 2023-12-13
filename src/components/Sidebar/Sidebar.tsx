@@ -59,7 +59,7 @@ export default function Sidebar() {
                 >
                   <div
                     className={`flex p-2 space-x-4 border border-[#F2F3FF] drop-shadow-sm rounded-xl cursor-pointer h-[50px] ${
-                      active === menu.name ? "bg-info" : ""
+                      active === menu.name ? "bg-info" : "bg-white"
                     }`}
                   >
                     <div
