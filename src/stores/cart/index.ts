@@ -5,13 +5,18 @@ import { persist } from "zustand/middleware";
 interface CartState {
   carts: CardInterface[];
   addToCart: (data: { product: Products; qty: number; notes: string }) => void;
-  updateQty: (type: string) => void;
+  updateQty: (type: string, id: number) => void;
+  removeFromCart: (id: number) => void;
+  updateNotes: (id: number, notes: string) => void;
+  clearCart: () => void;
+  subtotal: number;
 }
 
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
       carts: [],
+      subtotal: 0,
       addToCart: (data) => {
         const updatedCarts = get().carts.map((item) => {
           if (item.id === data.product.id) {
@@ -30,8 +35,6 @@ export const useCartStore = create<CartState>()(
           }
           return item; // Return unchanged item if not the one to be updated
         });
-
-        console.log(updatedCarts);
 
         // Check if the item already exists in the cart
         const isItemInCart = updatedCarts.some(
@@ -61,13 +64,49 @@ export const useCartStore = create<CartState>()(
           // If the item is already in the cart, update the state with the modified array
           set(() => ({ carts: updatedCarts }));
         }
+        const subtotal = get().carts.reduce((res, item) => res + item.total, 0);
+        set({ subtotal: subtotal });
       },
 
-      updateQty: (type) => {},
+      updateQty: (type, id) => {
+        const newChart = get().carts;
+        newChart.map((item) => {
+          if (item.id === id) {
+            item.qty = type === "INCREASE" ? item.qty + 1 : item.qty - 1;
+          }
+          const price = item.discount
+            ? item.price - item.price * (item.discount / 100)
+            : item.price;
+          item.total = item.qty * price;
+          const subtotal = newChart.reduce((res, item) => res + item.total, 0);
+          set(() => ({ carts: newChart, subtotal: subtotal }));
+        });
+      },
+
+      updateNotes: (id, notes) => {
+        const newChart = get().carts;
+        newChart.map((item) => {
+          if (item.id === id) {
+            item.notes = notes;
+          }
+        });
+
+        set(() => ({ carts: newChart }));
+      },
+
+      removeFromCart: (id) => {
+        const newChart = get().carts.filter((item) => item.id !== id);
+        const subtotal = newChart.reduce((res, item) => res + item.total, 0);
+        set(() => ({ carts: newChart, subtotal: subtotal }));
+      },
+
+      clearCart: () => {
+        set(() => ({ carts: [], subtotal: 0 }));
+      },
     }),
     {
       name: "cart",
-      partialize: ({ carts }) => ({ carts }),
+      partialize: ({ carts, subtotal }) => ({ carts, subtotal }),
     }
   )
 );
@@ -79,8 +118,12 @@ const useCart: () => CartState = () => {
     ? store
     : {
         carts: [],
+        subtotal: 0,
         addToCart: () => null,
         updateQty: () => null,
+        removeFromCart: () => null,
+        updateNotes: () => null,
+        clearCart: () => null,
       };
 };
 

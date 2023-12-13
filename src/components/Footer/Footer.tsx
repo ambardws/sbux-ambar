@@ -9,7 +9,7 @@ import clsx from "clsx";
 export default function Footer() {
   const { carts } = useCart();
   return (
-    <footer className="sticky bottom-0 bg-white w-full h-[80px] border-t-[1.5px] border-[#F1F6FC] shadow-[0_-5px_3px_-3px_#F1F6FC] flex justify-between px-5">
+    <footer className="sticky bottom-0 bg-white w-full h-[80px] border-t-[1.5px] border-[#F1F6FC] shadow-[0_-5px_3px_-3px_#F1F6FC] flex justify-between px-5 z-40">
       <CountCart />
       <button
         disabled={carts.length === 0}

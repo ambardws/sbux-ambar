@@ -30,6 +30,11 @@ import ShoppingCart from "./icons/shopping-cart.svg";
 
 // Section Cart
 import SaveOrder from "./icons/Cart/Save-order.svg";
+import Edit from "./icons/Cart/Edit.svg";
+import Delete from "./icons/Cart/Delete.svg";
+import ConfirmDelete from "./icons/Cart/confirmation-delete.svg";
+import CartEmpty from "./icons/Cart/Cart-Empty.svg";
+import Deleteall from "./icons/Cart/Delete-All.svg";
 
 import New from "./icons/new.svg";
 
@@ -48,28 +53,33 @@ const assets = {
     ArrowRight,
     Cart2,
     New,
-    SaveOrder
+    SaveOrder,
   },
   StarbuckBeverages: {
     BrewedCoffees,
-    EspressoImage
+    EspressoImage,
   },
   StarbuckFoods: {
-    Sandwich
+    Sandwich,
   },
   StarbuckBanners: {
     Banner1,
     Banner2,
-    Banner3
+    Banner3,
   },
   StarbuckMostOrders: {
     Macchiato,
     GreenTea,
     Cakes,
-    ShoppingCart
+    ShoppingCart,
   },
   StarbuckCart: {
-    SaveOrder
-  }
+    SaveOrder,
+    Edit,
+    Delete,
+    ConfirmDelete,
+    CartEmpty,
+    Deleteall,
+  },
 };
 export default assets;
