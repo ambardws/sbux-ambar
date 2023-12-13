@@ -1,11 +1,10 @@
 "use client";
 import assets from "@trex/assets";
 import Image from "next/image";
-import { Link } from "react-scroll/modules";
+import { Link } from "react-scroll";
 import React, { useEffect, useState } from "react";
 import { MenusBeverages, MenusFoods } from "@trex/stores/DataTemp/menus";
 import { useProductStore } from "@trex/stores/products";
-import { count } from "console";
 
 export default function Sidebar() {
   const { products } = useProductStore();
@@ -69,7 +68,7 @@ export default function Sidebar() {
                       }`}
                     ></div>
                     <div
-                      className={`h-[90%] m-auto p-0.5${
+                      className={`h-[90%] m-auto p-0.5 ${
                         active === menu.name ? "rounded-full" : ""
                       }`}
                     >
