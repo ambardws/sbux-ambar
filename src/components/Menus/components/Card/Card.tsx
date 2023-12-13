@@ -128,7 +128,7 @@ export const Card = (props: any) => {
         </h1>
         <hr className="bg-[#CBD4E2] h-[2px] w-full my-auto mx-2" />
       </div>
-      <div className=" flex-wrap space-x-3 -mr-5 pb-1 -ml-2 \">
+      <div className=" flex-wrap space-x-3 -mr-5 pb-1 -ml-2 min-h-[270px]">
         {dataByCategory?.map((order, index) => (
           <CustomCard order={order} index={index} key={index} />
         ))}
