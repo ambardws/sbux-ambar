@@ -2,14 +2,32 @@
 import assets from "@trex/assets";
 import { useOnboardingStore } from "@trex/stores/onboarding";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const Onboarding = () => {
   const { setOnboarding } = useOnboardingStore();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [
+    assets.StarbuckImages.Onboarding1,
+    assets.StarbuckImages.Onboarding2,
+    assets.StarbuckImages.Onboarding3,
+  ];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    // Cleanup: Clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, [images.length]);
+
   return (
     <div className="flex flex-col justify-center items-center bg-white">
       <Image
-        src={assets.StarbuckImages.Onboarding1}
+        src={images[currentImageIndex]}
         alt="onboarding"
         className="h-[85vh] fade-out-image"
       />
