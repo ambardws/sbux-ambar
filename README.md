@@ -1,3 +1,6 @@
+Link deploy vercel : [Starbuck-App](sbux-ambar.vercel.app)
+Link Record : [Vidyard Recording Sbux](https://share.vidyard.com/watch/5kevm7RfHgmSB6DeN9SK25?);
+
 # Meteor Nextjs Boilerplate
 
 a meteor nextjs boilerplate app, this code was builded using this versions :
@@ -14,10 +17,11 @@ a meteor nextjs boilerplate app, this code was builded using this versions :
   - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - zustand 4.4.1
   - [Zustand Documentation](https://zustand-demo.pmnd.rs/) - learn about zustand, elegant state management tool
-- tailwindcss 3.3.3 
+- tailwindcss 3.3.3
   - [Tailwind CSS](https://tailwindcss.com/) - a utility-first CSS framework for rapidly building modern websites
 - daisyui 3.7.4
   - [Daisy UI](https://daisyui.com/) - a component plugin for Tailwind CSS
+
 ## Getting Started
 
 First, run the development server:
@@ -36,8 +40,8 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-
 ## Folder Structure
+
 ```bash
 |-- project-name
     |-- public                              // Public static resource of project
@@ -96,7 +100,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
         |   |-- client.ts
         |-- stores                           // zustand directory to manage global state and action
         |   |-- auth                         // zustand for auth
-        |       |-- actions.ts               // zustand action, usually has action from calling api from clients/api.ts 
+        |       |-- actions.ts               // zustand action, usually has action from calling api from clients/api.ts
         |       |-- index.ts                 // zustand state, your state of the app
         |-- types                            // modelin ts types
         |   |-- user.d.ts
