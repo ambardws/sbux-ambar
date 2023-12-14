@@ -5,6 +5,7 @@ import { numberFormat } from "@trex/utils/format";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import ModalCart from "../Modal/ModalCart";
+import { API_BASE_URL } from "@trex/constants/env";
 
 type OrdersCard = {
   index: number;
@@ -16,7 +17,7 @@ export default function MostOrders() {
 
   const getMostOrders = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/most-orders");
+      const response = await fetch(`${API_BASE_URL}/api/most-orders`);
       const res = await response.json();
       setOrders(res.data);
     } catch (error) {
