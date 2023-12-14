@@ -26,11 +26,13 @@ export default function ModalCart(props: any) {
               {/*content*/}
               <div className="modal-box overflow-hidden">
                 <div className="flex min-h-48 max-h-max">
-                  <div className="w-1/2">
+                  <div className="w-1/2 flex items-center justify-center">
                     <Image
-                      src={assets.StarbuckBeverages.BrewedCoffees}
-                      alt="coffess"
-                      className="h-max w-28 m-auto"
+                      src={data.image}
+                      alt={data.coffee}
+                      width={112}
+                      height={112}
+                      className="h-max w-28"
                     />
                   </div>
 
