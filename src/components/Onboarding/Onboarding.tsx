@@ -1,6 +1,7 @@
 "use client";
 import assets from "@trex/assets";
 import { useOnboardingStore } from "@trex/stores/onboarding";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -26,11 +27,19 @@ export const Onboarding = () => {
 
   return (
     <div className="flex flex-col justify-center items-center bg-white">
-      <Image
-        src={images[currentImageIndex]}
-        alt="onboarding"
-        className="h-[85vh] fade-out-image"
-      />
+      <motion.div
+        key={currentImageIndex}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <Image
+          src={images[currentImageIndex]}
+          alt="onboarding"
+          className="h-[85vh] fade-out-image"
+        />
+      </motion.div>
       <button
         onClick={() => setOnboarding()}
         className="btn bg-success text-white font-medium rounded-[50px] capitalize w-1/4 -mt-10 z-10"
