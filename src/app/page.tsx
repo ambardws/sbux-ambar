@@ -14,6 +14,14 @@ export default function Home() {
   const { onboarding } = useOnboardingStore();
 
   useEffect(() => {
+    if (onboarding) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [onboarding]);
+
+  useEffect(() => {
     GetProducts();
   }, []);
   return (

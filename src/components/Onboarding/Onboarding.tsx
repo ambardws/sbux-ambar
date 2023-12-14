@@ -6,7 +6,6 @@ import React from "react";
 
 export const Onboarding = () => {
   const { setOnboarding } = useOnboardingStore();
-  document.body.style.overflow = "hidden";
   return (
     <div className="flex flex-col justify-center items-center bg-white">
       <Image
