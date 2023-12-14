@@ -114,7 +114,7 @@ export default function Sidebar() {
                       }`}
                     ></div>
                     <div
-                      className={`h-[90%] m-auto p-0.5${
+                      className={`h-[90%] m-auto p-0.5 ${
                         active === menu.name ? "rounded-full" : ""
                       }`}
                     >
