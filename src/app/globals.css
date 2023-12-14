@@ -34,20 +34,20 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.no-scrollbar { 
+.no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-} 
+}
 
-.no-scrollbar::-webkit-scrollbar { 
-  display: none; 
-} 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
 .stack-top {
   /* adjust the below to control the shape */
-  --d:5px; 
-  --w:100px;
-  --c:#fba325;
+  --d: 5px;
+  --w: 100px;
+  --c: #fba325;
   /**/
 
   position: absolute;
@@ -58,17 +58,27 @@ body {
   text-align: center;
   width: var(--w);
   transform-origin: bottom left;
-  padding:5px 0 calc(var(--d) + 5px);
-  background:
-    linear-gradient(rgba(0,0,0,0.6) 0 0) bottom/100% var(--d) no-repeat
-    var(--c);
-  clip-path:polygon(0 100%,0 calc(100% - var(--d)),50% calc(100% - var(--d) - var(--w)/2),100% calc(100% - var(--d)),100% 100%,calc(100% - var(--d)) calc(100% - var(--d)), var(--d) calc(100% - var(--d)))
+  padding: 5px 0 calc(var(--d) + 5px);
+  background: linear-gradient(rgba(0, 0, 0, 0.6) 0 0) bottom/100% var(--d)
+    no-repeat var(--c);
+  clip-path: polygon(
+    0 100%,
+    0 calc(100% - var(--d)),
+    50% calc(100% - var(--d) - var(--w) / 2),
+    100% calc(100% - var(--d)),
+    100% 100%,
+    calc(100% - var(--d)) calc(100% - var(--d)),
+    var(--d) calc(100% - var(--d))
+  );
 }
 
 .stack-top.left {
-  left:0;
-  right:auto;
+  left: 0;
+  right: auto;
   transform: translate(-29.29%, -100%) rotate(-45deg);
   transform-origin: bottom right;
 }
 
+.fade-out-image {
+  mask-image: linear-gradient(to top, transparent 6%, black 16%);
+}

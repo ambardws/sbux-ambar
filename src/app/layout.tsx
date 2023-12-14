@@ -1,7 +1,7 @@
 import { Footer, HeaderHome } from "@trex/components";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Heebo, Inter } from "next/font/google";
+import { Heebo } from "next/font/google";
 import Sidebar from "@trex/components/Sidebar/Sidebar";
 
 const inter = Heebo({ subsets: ["latin"] });

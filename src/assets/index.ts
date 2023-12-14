@@ -36,11 +36,22 @@ import ConfirmDelete from "./icons/Cart/confirmation-delete.svg";
 import CartEmpty from "./icons/Cart/Cart-Empty.svg";
 import Deleteall from "./icons/Cart/Delete-All.svg";
 
+import OnboadingImage from "./images/Mask-group.png";
+import Onboarding1 from "./images/Onboarding/onboarding-1.png";
+import Onboarding2 from "./images/Onboarding/onboarding-2.png";
+import Onboarding3 from "./images/Onboarding/onboarding-3.png";
+import LogoStarbuck from "./images/logo-starbuck.svg";
+
 import New from "./icons/new.svg";
 
 const assets = {
   StarbuckImages: {
     Logo,
+    OnboadingImage,
+    Onboarding1,
+    Onboarding2,
+    Onboarding3,
+    LogoStarbuck,
   },
   StarbuckIcons: {
     Cart,
