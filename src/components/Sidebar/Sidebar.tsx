@@ -5,12 +5,14 @@ import { Link } from "react-scroll";
 import React, { useEffect, useState } from "react";
 import { MenusBeverages, MenusFoods } from "@trex/stores/DataTemp/menus";
 import { useProductStore } from "@trex/stores/products";
+import { useOnboardingStore } from "@trex/stores/onboarding";
 
 export default function Sidebar() {
   const { products } = useProductStore();
   const [active, setActive] = useState("");
   const [countBeverages, setCountBeverages] = useState(0);
   const [countFoods, setCountFoods] = useState(0);
+  const { onboarding } = useOnboardingStore();
 
   const countMenus = () => {
     const data: any = products[0];
@@ -34,6 +36,12 @@ export default function Sidebar() {
   useEffect(() => {
     countMenus();
   }, []);
+
+  useEffect(() => {
+    if (onboarding) {
+      setActive("");
+    }
+  }, [onboarding]);
 
   return (
     <div className=" bg-white w-[25%] py-5 relative min-h-[1200px] max-h-max">
