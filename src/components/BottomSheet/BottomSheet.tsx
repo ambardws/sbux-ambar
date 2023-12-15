@@ -260,8 +260,8 @@ export const BottomSheet = (props: any) => {
             <div ref={bottomSheetRef}>
               <div className="h-full flex flex-col justify-between">
                 {carts.length > 0 ? (
-                  <div className="h-[80vh]">
-                    <div className="p-4 overflow-y-auto no-scrollbar">
+                  <div className="h-[80vh] overflow-y-auto no-scrollbar">
+                    <div className="p-4">
                       <div className="flex my-auto space-x-10 text-sm">
                         <p className="my-auto font-medium text-base">Cart</p>
                         <div className="flex space-x-3">
